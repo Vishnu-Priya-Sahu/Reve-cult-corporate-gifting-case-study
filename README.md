@@ -14,6 +14,8 @@ On the receiving end, incoming email replies are watched continuously via IMAP. 
 
 ![Lead Outreach Workflow](asset/Lead%20Outreach%20Workflow.jpeg)
 
+https://www.loom.com/share/7a44acb34b2c4356badf80a178b71c8b
+
 ## The Bug — and the Fix
 
 This is the part of the system I'm proudest of, because it came from something breaking in a way I didn't expect, and fixing it meant rethinking the design rather than patching around the symptom.
@@ -29,6 +31,8 @@ I also added a refinement on top of that: instead of just flagging a reply for r
 ![AI Reply Classifier](asset/AI%20Classifier.jpeg)
 
 ![Flagged for human review in the activity log](asset/Activity%20Log.jpeg)
+
+https://www.loom.com/share/af4521b7b1c8431780c70c3d1cb0ecaa
 
 ## Impact
 
