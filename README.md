@@ -12,6 +12,8 @@ The workflow uses a Google Sheet as the lead database. Whenever a new lead is ad
 
 On the receiving end, incoming email replies are watched continuously via IMAP. Each reply goes through a classification step that decides whether it's something the AI can safely respond to on its own, or whether it needs to be escalated to a human reviewer.
 
+![Lead Outreach Workflow](asset/Lead%20Outreach%20Workflow.jpeg)
+
 ## The Bug — and the Fix
 
 This is the part of the system I'm proudest of, because it came from something breaking in a way I didn't expect, and fixing it meant rethinking the design rather than patching around the symptom.
@@ -23,6 +25,10 @@ Rather than trying to make the AI smarter at parsing every possible reply format
 This was a deliberate design choice, not a limitation. Pricing can vary and often involves negotiation, so hard-coding it into the AI risked it quoting something wrong or inconsistent, which damages trust with a corporate lead. Scheduling depends on the team's real availability, so having the AI attempt that would mean either guessing at a calendar or making promises it couldn't keep. And a short or ambiguous reply like "interested" genuinely could mean several different things — pricing, a meeting, general interest — so guessing wrong there risks losing the lead entirely. In each case, more automation meant more risk, not more intelligence, so I chose to keep the AI confident and narrow, and default everything uncertain to a human.
 
 I also added a refinement on top of that: instead of just flagging a reply for review, the workflow writes an extracted reason into the Sheet and the Slack notification — "pricing inquiry," "meeting request," "short reply," "non-English reply," and so on. Reviewers no longer have to read a raw email and figure out why it needs their attention; they get pre-triaged context the moment it lands in front of them.
+
+![AI Reply Classifier](asset/AI%20Classifier.jpeg)
+
+![Flagged for human review in the activity log](asset/Activity%20Log.jpeg)
 
 ## Impact
 
